@@ -31,6 +31,16 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic.
+gem 'slim-rails', '~> 3.1', '>= 3.1.2'
+# Convert HTML to Slim templates. Because HTML sux and Slim rules. That's why.
+gem 'html2slim', '~> 0.2.0'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Rails 3 and 4
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+# Easy upload management for ActiveRecord
+gem 'paperclip', '~> 5.1'
+# Devise is a flexible authentication solution for Rails based on Warden
+gem 'devise', '~> 4.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
