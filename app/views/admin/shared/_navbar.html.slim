@@ -30,11 +30,10 @@ nav.navbar.navbar-default.navbar-static-top[role="navigation" style="margin-bott
             i.fa.fa-bar-chart-o.fa-fw
             |  Posts
             span.fa.arrow
-          ul.nav.nav-second-level.collapse
-            li
-              /= link_to 'Manage sensors', sensors_path()
-            li
-              /= link_to 'Create new sensor', new_sensor_path()
+        li
+          = link_to admin_categories_path do
+            i.fa.fa-bar-chart-o.fa-fw
+            | Categories
         li
           a[href="/pages/about"]
             i.fa.fa-info-circle.fa-fw

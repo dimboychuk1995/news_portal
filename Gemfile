@@ -44,7 +44,9 @@ gem 'devise', '~> 4.2'
 # bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
-
+gem 'friendly_id'
+# Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
+gem 'faker', '~> 1.6', '>= 1.6.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

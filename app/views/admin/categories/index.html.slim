@@ -1,0 +1,20 @@
+- content_for(:page_header) do
+  = link_to 'New Category', new_admin_category_path, class: 'btn btn-success'
+- content_for :panel_heading do
+  | Categories
+p#notice
+  = notice
+table#categories.display.table[cellspacing="0" width="100%"]
+  thead
+    tr
+      th
+        | Name
+      th
+  tbody
+    - @categories.each do |category|
+      tr
+        td[width="70%"]
+          = category.name
+        td.action-buttons
+          = link_to 'Edit', edit_admin_category_path(category), class: 'btn btn-primary'
+          = link_to 'Destroy', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'

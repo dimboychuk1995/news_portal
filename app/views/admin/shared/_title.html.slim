@@ -1,4 +1,4 @@
+br
 .row
-  .col-lg-12
-    h1.page-header
-      = content_for?(:page_header) ? yield(:page_header) : 'Dashboard'
+  .col-lg-12.pull-right
+    = content_for?(:page_header) ? yield(:page_header) : ''
