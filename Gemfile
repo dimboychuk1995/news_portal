@@ -41,6 +41,10 @@ gem 'kaminari', '~> 1.0', '>= 1.0.1'
 gem 'paperclip', '~> 5.1'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise', '~> 4.2'
+# bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_sb_admin_base_v2'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
