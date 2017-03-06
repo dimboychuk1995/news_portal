@@ -1,0 +1,17 @@
+- content_for :panel_heading do
+  = t(:article_preview)
+
+p
+  strong = t(:title)
+  br
+  = @article.title
+
+p
+  strong = t(:content)
+  br
+  = @article.content
+
+p
+  strong = t(:category)
+  br
+  = @article.category.name

@@ -17,5 +17,7 @@ module NewsPortal
       g.javascripts = false
       g.helper = false
     end
+    config.time_zone = 'Europe/Kiev'
+    config.i18n.default_locale = :uk
   end
 end

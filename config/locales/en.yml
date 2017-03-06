@@ -1,20 +1,38 @@
 ---
 en:
   about: About
+  article_preview: Article preview
+  article_was_successfully_created: Article was successfully created
+  article_was_successfully_destroyed: Article was successfully destroyed
+  article_was_successfully_updated: Article was successfully updated
+  articles: Articles
   categories: Categories
+  category: Category
   category_was_successfully_created: Category was successfully created
   category_was_successfully_destroyed: Category was successfully destroyed
   category_was_successfully_updated: Category was successfully updated
+  content: Content
+  create_new_article: Create new article
   create_new_category: Create new category
+  created_at: Created at
   dashboard: Dashboard
   destroy: Destroy
   edit: Edit
+  edit_article: Edit article
   edit_category: Edit category
+  enter_article_name: Enter article name
+  enter_article_title: Enter article title
+  enter_content: Enter content
   hello: Hello world
   home: Home
   name: Name
+  new_article: New article
   new_category: New category
   news_portal: News portal
   posts: Posts
+  select_a_category: Select a category
+  show: Show
   submit: Submit
+  title: Title
   toggle_navigation: Toggle navigation
+  updated_at: Updated at
