@@ -15,7 +15,7 @@ class Admin::CategoriesController < Admin::BaseController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to edit_admin_category_url(@category), notice: 'Category was successfully created.'
+      redirect_to edit_admin_category_url(@category), notice: t(:category_was_successfully_created)
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def update
     if @category.update(category_params)
-      redirect_to edit_admin_category_url(@category), notice: 'Category was successfully updated.'
+      redirect_to edit_admin_category_url(@category), notice: t(:category_was_successfully_updated)
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def destroy
     @category.destroy
-    redirect_to admin_categories_url, notice: 'Category was successfully destroyed.'
+    redirect_to admin_categories_url, notice: t(:category_was_successfully_destroyed)
   end
 
   private

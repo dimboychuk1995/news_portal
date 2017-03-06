@@ -2,9 +2,9 @@ doctype html
 html
   head
     title
-      | NewsPortal
+      = t(:news_portal)
     = csrf_meta_tags
-    = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => 'reload'
+    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => 'reload'
   body
     #wrapper
       = render 'admin/shared/navbar'
@@ -15,7 +15,7 @@ html
         = render 'admin/shared/messages'
       div.panel.panel-default
         .panel-heading
-          = content_for?(:panel_heading) ? yield(:panel_heading) : "Dashboard"
+          = content_for?(:panel_heading) ? yield(:panel_heading) : t(:dashboard)
         .panel-body
           = yield
   = javascript_include_tag 'application', 'data-turbolinks-track' => true

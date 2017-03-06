@@ -48,6 +48,8 @@ gem 'friendly_id'
 # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 gem 'faker', '~> 1.6', '>= 1.6.3'
 
+gem 'i18n-tasks', '~> 0.9.12'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

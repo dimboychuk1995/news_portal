@@ -9,8 +9,8 @@
           li
             = message
   .form-group
-    = f.label :name
+    = f.label :name, t(:name)
     br
     = f.text_field :name, class: 'form-control', placeholder: 'Enter category name...', required: true
   .form-group.actions
-    = f.submit 'Submit', :class => 'btn btn-lg btn-success btn-block'
+    = f.submit t(:submit), :class => 'btn btn-lg btn-success btn-block'
