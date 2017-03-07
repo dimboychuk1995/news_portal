@@ -1,5 +1,5 @@
 class Admin::ArticlesController < Admin::BaseController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:create, :show, :edit, :update, :destroy, :upload_attachment]
   before_action :set_categories, only: [:new, :create, :edit, :update]
 
   def index
@@ -10,15 +10,16 @@ class Admin::ArticlesController < Admin::BaseController
   end
 
   def new
-    @article = Article.new
+    @article = Article.create(title: "#{t(:new_article_form)} #{Date.current}", content: '')
+    redirect_to edit_admin_article_url(@article)
   end
 
   def edit
   end
 
   def create
-    @article = Article.new(article_params)
-    if @article.save
+    # @article = Article.new(article_params)
+    if @article.update(article_params)
       redirect_to edit_admin_article_url(@article), notice: t(:article_was_successfully_created)
     else
       render :new
@@ -36,6 +37,13 @@ class Admin::ArticlesController < Admin::BaseController
   def destroy
     @article.destroy
     redirect_to admin_articles_url, notice: t(:article_was_successfully_destroyed)
+  end
+
+  def upload_attachment
+    @attachment = @article.attachments.create(image: params[:file])
+    respond_to do |format|
+      format.json { render :json => { status: 'OK', link: @attachment.image.url}}
+    end
   end
 
   private

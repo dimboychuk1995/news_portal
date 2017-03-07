@@ -49,6 +49,8 @@ gem 'friendly_id'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 
 gem 'i18n-tasks', '~> 0.9.12'
+gem 'wysiwyg-rails'
+gem 'js-routes'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

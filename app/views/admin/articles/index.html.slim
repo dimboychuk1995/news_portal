@@ -22,9 +22,9 @@ table#articles.display.table[cellspacing="0" width="100%"]
         td
           = article.title
         td
-          = article.content.truncate(50)
+          = ActionView::Base.full_sanitizer.sanitize(article.content).truncate(50)
         td
-          = article.category.name
+          = article.category.name if article.category
         td
           = show_time(article.updated_at)
         td.action-buttons

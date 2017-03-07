@@ -9,7 +9,7 @@ p
 p
   strong = t(:content)
   br
-  = @article.content
+  =raw @article.content.split('<hr>')[0]
 
 p
   strong = t(:category)

@@ -4,7 +4,7 @@ html
     title
       = t(:news_portal)
     = csrf_meta_tags
-    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => 'reload'
+    = stylesheet_link_tag 'admin', media: 'all'
   body
     #wrapper
       = render 'admin/shared/navbar'
@@ -18,5 +18,5 @@ html
           = content_for?(:panel_heading) ? yield(:panel_heading) : t(:dashboard)
         .panel-body
           = yield
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = javascript_include_tag 'admin'
   = content_for?(:extra_scripts) ? yield(:extra_scripts) : nil
