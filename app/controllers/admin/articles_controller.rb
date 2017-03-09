@@ -18,7 +18,6 @@ class Admin::ArticlesController < Admin::BaseController
   end
 
   def create
-    # @article = Article.new(article_params)
     if @article.update(article_params)
       redirect_to edit_admin_article_url(@article), notice: t(:article_was_successfully_created)
     else

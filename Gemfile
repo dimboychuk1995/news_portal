@@ -52,6 +52,9 @@ gem 'i18n-tasks', '~> 0.9.12'
 gem 'wysiwyg-rails'
 gem 'js-routes'
 
+gem 'ransack'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
