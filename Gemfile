@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+ruby '2.3.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use mysql as the database for Active Record
@@ -31,6 +31,22 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic.
+gem 'slim-rails', '~> 3.1', '>= 3.1.2'
+# Convert HTML to Slim templates. Because HTML sux and Slim rules. That's why.
+gem 'html2slim', '~> 0.2.0'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Rails 3 and 4
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+# Easy upload management for ActiveRecord
+gem 'paperclip', '~> 5.1'
+# Devise is a flexible authentication solution for Rails based on Warden
+gem 'devise', '~> 4.2'
+# bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_sb_admin_base_v2'
+gem 'friendly_id'
+# Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
+gem 'faker', '~> 1.6', '>= 1.6.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -48,6 +64,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,0 +1,40 @@
+nav.navbar.navbar-default.navbar-static-top[role="navigation" style="margin-bottom: 0"]
+  .navbar-header
+    button.navbar-toggle[data-target=".navbar-collapse" data-toggle="collapse" type="button"]
+      span.sr-only
+        | Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    = link_to 'Admin Panel', admin_root_path, class: 'navbar-brand'
+  ul.nav.navbar-top-links.navbar-right.pull-right
+    li.dropdown
+      a.dropdown-toggle[aria-expanded="false" data-toggle="dropdown" href="#"]
+        i.fa.fa-user.fa-fw
+        i.fa.fa-caret-down
+      ul.dropdown-menu.dropdown-user
+        li
+          /= link_to '<i class="fa fa-user fa-fw"></i>Profile</a>'.html_safe, user_path(current_user)
+        li.divider
+        li
+          /= link_to '<i class="fa fa-sign-out fa-fw"></i>Logout</a>'.html_safe, destroy_user_session_path, :method=>'delete'
+  .navbar-default.sidebar[role="navigation"]
+    .sidebar-nav.navbar-collapse
+      ul#side-menu.nav.in
+        li
+          = link_to admin_root_path do
+            i.fa.fa-dashboard.fa-fw
+            |  Dashboard
+        li
+          a[href="#"]
+            i.fa.fa-bar-chart-o.fa-fw
+            |  Posts
+            span.fa.arrow
+        li
+          = link_to admin_categories_path do
+            i.fa.fa-bar-chart-o.fa-fw
+            | Categories
+        li
+          a[href="/pages/about"]
+            i.fa.fa-info-circle.fa-fw
+            |  About
