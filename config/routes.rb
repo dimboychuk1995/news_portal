@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :categories, only: [] do
     resources :articles, only: [:index, :show]
   end
+  get '/most_viewed' => 'articles#most_viewed', as: 'most_viewed'
 
   namespace :admin do
     root to: 'home#index'

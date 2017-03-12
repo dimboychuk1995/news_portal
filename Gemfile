@@ -53,7 +53,7 @@ gem 'wysiwyg-rails'
 gem 'js-routes'
 
 gem 'ransack'
-
+gem 'impressionist'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

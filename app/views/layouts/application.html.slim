@@ -41,6 +41,8 @@ html
             .row
               .col-lg-12
                 ul.list-unstyled
+                  li
+                    = link_to 'Most viewed', most_viewed_path
                   - Category.all.each do |category|
                     li
                       = link_to category.name, category_articles_path(category)

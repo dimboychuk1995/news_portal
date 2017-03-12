@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :set_search
+
   def index
-    @search = Article.ransack(params[:q])
     @articles = Article.all
     if params[:q].present?
       @articles = @search.result
@@ -9,8 +10,21 @@ class ArticlesController < ApplicationController
     @articles = @articles.page(params[:page]).per(1)
   end
 
+  def most_viewed
+    @articles = Article.order('impressions_count DESC').page(params[:page]).per(1)
+    render :index
+  end
+
   def show
-    @search = Article.ransack(params[:q])
     @article = Article.find(params[:id])
+    impressionist(@article, '', unique: [:ip_address])
+
+    puts @article.impressionist_count(filter: :ip_address)
+  end
+
+  private
+
+  def set_search
+    @search = Article.ransack(params[:q])
   end
 end
