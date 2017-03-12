@@ -9,20 +9,20 @@ table#articles.display.table[cellspacing="0" width="100%"]
     tr
       th
         = t(:title)
-      th
-        = t(:content)
+      /th
+      /  = t(:content)
       th
         = t(:category)
       th
         = t(:updated_at)
-      th
+      th[width="30%"]
   tbody
     - @articles.each do |article|
       tr
         td
           = article.title
-        td
-          = ActionView::Base.full_sanitizer.sanitize(article.content).truncate(50)
+        /td
+        /  = ActionView::Base.full_sanitizer.sanitize(article.content).truncate(50)
         td
           = article.category.name if article.category
         td
@@ -37,6 +37,8 @@ table#articles.display.table[cellspacing="0" width="100%"]
     $(document).ready(function () {
       $('#articles').DataTable({
         responsive: true,
+        stateSave: true,
+        order: [[ 2, "desc" ]],
         language: {
               "url": "//cdn.datatables.net/plug-ins/1.10.13/i18n/Ukrainian.json"
           }
