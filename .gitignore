@@ -20,3 +20,4 @@ dump.rdb
 /public/assets/*
 /public/system/*
 coverage
+/config/database.yml
