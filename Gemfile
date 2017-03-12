@@ -54,7 +54,7 @@ gem 'js-routes'
 
 gem 'ransack'
 gem 'impressionist'
-
+gem 'therubyracer'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
