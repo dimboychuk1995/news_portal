@@ -2,11 +2,11 @@ nav.navbar.navbar-default.navbar-static-top[role="navigation" style="margin-bott
   .navbar-header
     button.navbar-toggle[data-target=".navbar-collapse" data-toggle="collapse" type="button"]
       span.sr-only
-        | Toggle navigation
+        = t(:toggle_navigation)
       span.icon-bar
       span.icon-bar
       span.icon-bar
-    = link_to 'Admin Panel', admin_root_path, class: 'navbar-brand'
+    = link_to t(:dashboard), admin_root_path, class: 'navbar-brand'
   ul.nav.navbar-top-links.navbar-right.pull-right
     li.dropdown
       a.dropdown-toggle[aria-expanded="false" data-toggle="dropdown" href="#"]
@@ -22,19 +22,10 @@ nav.navbar.navbar-default.navbar-static-top[role="navigation" style="margin-bott
     .sidebar-nav.navbar-collapse
       ul#side-menu.nav.in
         li
-          = link_to admin_root_path do
-            i.fa.fa-dashboard.fa-fw
-            |  Dashboard
-        li
-          a[href="#"]
+          = link_to admin_articles_path do
             i.fa.fa-bar-chart-o.fa-fw
-            |  Posts
-            span.fa.arrow
+            = t(:articles)
         li
           = link_to admin_categories_path do
             i.fa.fa-bar-chart-o.fa-fw
-            | Categories
-        li
-          a[href="/pages/about"]
-            i.fa.fa-info-circle.fa-fw
-            |  About
+            = t(:categories)

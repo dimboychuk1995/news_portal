@@ -1,0 +1,44 @@
+- content_for(:page_header) do
+  = link_to t(:new_article), new_admin_article_path, class: 'btn btn-success'
+- content_for :panel_heading do
+  = t(:articles)
+p#notice
+  = notice
+table#articles.display.table[cellspacing="0" width="100%"]
+  thead
+    tr
+      th
+        = t(:title)
+      th
+        = t(:content)
+      th
+        = t(:category)
+      th
+        = t(:updated_at)
+      th
+  tbody
+    - @articles.each do |article|
+      tr
+        td
+          = article.title
+        td
+          = ActionView::Base.full_sanitizer.sanitize(article.content).truncate(50)
+        td
+          = article.category.name if article.category
+        td
+          = show_time(article.updated_at)
+        td.action-buttons
+          = link_to t(:show), [:admin, article], class: 'btn btn-success'
+          = link_to t(:edit), edit_admin_article_path(article), class: 'btn btn-primary'
+          = link_to t(:destroy), admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+
+- content_for(:extra_scripts) do
+  javascript:
+    $(document).ready(function () {
+      $('#articles').DataTable({
+        responsive: true,
+        language: {
+              "url": "//cdn.datatables.net/plug-ins/1.10.13/i18n/Ukrainian.json"
+          }
+      });
+    });
