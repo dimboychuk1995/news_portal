@@ -27,13 +27,45 @@
 - content_for(:extra_scripts) do
   javascript:
     $(document).ready(function () {
-      var id = $("form").data("id");
-      var csrf_token = $('meta[name="csrf-token"]').attr('content');
-      $('#article_content').froalaEditor({
-          language: 'uk',
-          height: 500,
-          imageUploadURL: Routes.upload_attachment_admin_article_path(id, {format: 'json'}) ,
-          imageUploadMethod: 'POST',
-          imageUploadParams: {'authenticity_token': csrf_token}
+      $('#article_content').summernote({
+          lang: 'uk-UA',
+          height: 200,
+          toolbar: [
+              ['style', ['style']],
+              ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+              ['fontname', ['fontname']],
+              ['fontsize', ['fontsize']],
+              ['color', ['color']],
+              ['para', ['ul', 'ol', 'paragraph']],
+              ['height', ['height']],
+              ['table', ['table']],
+              ['insert', ['link', 'picture', 'video', 'hr']],
+              ['help', ['fullscreen', 'codeview', 'undo', 'redo', 'help']]
+          ],
+          callbacks: {
+              onImageUpload: function(files) {
+                  return sendFile(files[0], $(this));
+              }
+          }
       });
+
+      $('.dropdown-toggle').dropdown();
+
+      function sendFile(file, toSummernote) {
+          var id = $("form").data("id");
+          var data;
+          data = new FormData;
+          data.append('file', file);
+          return $.ajax({
+              data: data,
+              type: 'POST',
+              url: Routes.upload_attachment_admin_article_path(id, {format: 'json'}),
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function (data) {
+                  return toSummernote.summernote("insertImage", data.link);
+              }
+          });
+      };
     });
