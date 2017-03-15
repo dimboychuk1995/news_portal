@@ -1,4 +1,20 @@
-h1
-  | Admin::Home#index
-p
-  | Find me in app/views/admin/home/index.html.erb
+//stats
+.row
+  .col-lg-6.col-md-6
+    .panel.panel-primary
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-comments.fa-5x
+          .col-xs-9.text-right
+            .huge= Article.count
+            div= t(:articles)
+  .col-lg-6.col-md-6
+    .panel.panel-green
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-tasks.fa-5x
+          .col-xs-9.text-right
+            .huge= Article.all.sum(:impressions_count)
+            div= t(:views)
