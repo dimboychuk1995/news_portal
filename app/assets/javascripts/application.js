@@ -12,4 +12,25 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require massive/modernizr/modernizr.js
+//= require massive/bootstrap/js/bootstrap.min.js
+//= require massive/breakpoint/breakpoint.js
+//= require massive/count-to/jquery.countTo.js
+//= require massive/countdown/jquery.countdown.js
+//= require massive/easing/jquery.easing.1.3.js
+//= require massive/easy-pie-chart/jquery.easypiechart.min.js
+//= require massive/elasic-slider/jquery.eislideshow.js
+//= require massive/flex-slider/jquery.flexslider-min.js
+//= require massive/images-loaded/imagesloaded.js
+//= require massive/isotope/jquery.isotope.js
+//= require massive/magnific-popup/jquery.magnific-popup.min.js
+//= require massive/mailchimp/jquery.ajaxchimp.min.js
+//= require massive/menuzord/menuzord.js
+//= require massive/nav/jquery.nav.js
+//= require massive/smooth/smooth.js
+//= require massive/touchspin/touchspin.js
+//= require massive/typist/typist.js
+//= require massive/sticky/jquery.sticky.min.js
+//= require massive/visible/visible.js
+//= require massive/wow/wow.min.js
+//= require scripts.js
