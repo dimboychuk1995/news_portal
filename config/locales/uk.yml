@@ -1,39 +1,38 @@
 ---
 uk:
-  about: About
-  article_preview: Article preview
-  article_was_successfully_created: Article was successfully created
-  article_was_successfully_destroyed: Article was successfully destroyed
-  article_was_successfully_updated: Article was successfully updated
-  articles: Articles
-  categories: Categories
-  category: Category
-  category_was_successfully_created: Category was successfully created
-  category_was_successfully_destroyed: Category was successfully destroyed
-  category_was_successfully_updated: Category was successfully updated
-  content: Content
-  create_new_article: Create new article
-  create_new_category: Create new category
-  created_at: Created at
-  dashboard: Dashboard
-  destroy: Destroy
-  edit: Edit
-  edit_article: Edit article
-  edit_category: Edit category
-  enter_article_name: Enter article name
-  enter_article_title: Enter article title
-  enter_content: Enter content
+  about: Про
+  article_preview: Попередній перегляд
+  article_was_successfully_created: Стаття створена успішно
+  article_was_successfully_destroyed: Стаття видалена успішно
+  article_was_successfully_updated: Стаття оновлена успішно
+  articles: Статті
+  categories: Категорії
+  category: Категорія
+  category_was_successfully_created: Категорія створена успішно
+  category_was_successfully_destroyed: Категорія видалена успішно
+  category_was_successfully_updated: Категорія оновлена успішно
+  content: Вміст
+  create_new_article: Створити нову статтю
+  create_new_category: Створити нову категорію
+  created_at: Створено
+  dashboard: Панель адміністратора
+  destroy: Видалити
+  edit: Редагувати
+  edit_article: Редагування статті
+  edit_category: Редагування категорії
+  enter_article_title: Введіть заголовок
+  enter_content: Введіть текст
   hello: Hello world
-  home: Home
-  name: Name
-  new_article: New article
-  new_article_form: New article form
-  new_category: New category
-  news_portal: News portal
-  posts: Posts
-  select_a_category: Select a category
-  show: Show
-  submit: Submit
-  title: Title
-  toggle_navigation: Toggle navigation
-  updated_at: Updated at
+  home: Головна
+  name: Ім'я
+  new_article: Нова стаття
+  new_article_form: Нова стаття від
+  new_category: Нова категорія
+  news_portal: Портал новин
+  select_a_category: Виберіть категорію
+  show: Переглянути
+  submit: Зберегти
+  title: Заголовок
+  toggle_navigation: Навігація
+  updated_at: Оновлено
+  views: "Перегляди"

@@ -20,7 +20,6 @@ en:
   edit: Edit
   edit_article: Edit article
   edit_category: Edit category
-  enter_article_name: Enter article name
   enter_article_title: Enter article title
   enter_content: Enter content
   hello: Hello world
@@ -37,3 +36,4 @@ en:
   title: Title
   toggle_navigation: Toggle navigation
   updated_at: Updated at
+  views: "Views"
