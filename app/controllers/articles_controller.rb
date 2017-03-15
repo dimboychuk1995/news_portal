@@ -6,8 +6,12 @@ class ArticlesController < ApplicationController
     if params[:q].present?
       @articles = @search.result
     end
-    @articles = @articles.where(category: Category.find(params[:category_id])) if params[:category_id].present?
-    @articles = @articles.page(params[:page]).per(1)
+
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      @articles = @articles.where(category: @category.id)
+    end
+    @articles = @articles.page(params[:page])
   end
 
   def most_viewed

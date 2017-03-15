@@ -6,27 +6,82 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
   body
-    p AAA
+    #tb-preloader
+      .tb-preloader-wave
+    /! preloader end
+    .wrapper
+      /! header start
+      header.l-header
+        .l-navbar.l-navbar_expand.l-navbar_t-light.js-navbar-sticky
+          .container-fluid
+            nav.menuzord.js-primary-navigation aria-label=('Primary Navigation') role="navigation"
+              /! logo start
+              = link_to root_path, class: 'logo-brand' do
+                img.retina alt="Massive" src="/assets/logo.png"
+              /! logo end
+              /! mega menu start
+              ul.menuzord-menu.menuzord-right.c-nav_s-bg
+                li.active
+                  = link_to 'Home', root_path
+                li
+                  a href="#"  Categories
+                  ul.dropdown
+                    - Category.all.each do |category|
+                      li
+                        = link_to category.name, category_articles_path(category)
+                li
+                  = link_to 'Most viewed', most_viewed_path
+                li
+                  a href="javascript:void(0)"
+                    i.fa.fa-search
+                    | Search
+                  .megamenu.megamenu-quarter-width.navbar-search
+                    = search_form_for @search do |f|
+                      = f.search_field :title_or_content_cont, class: 'form-control'
+                        /span.input-group-btn
+                        /  = f.submit class: 'btn btn-default'
+                    /form role="searchform"
+                    /  input.form-control placeholder=("Search Here") type="text" /
 
+      - if current_page?(root_path)
+        .banner-state.vertical-align.banner-01.height-600
+          .container-mid
+            .container
+              .row
+                .col-md-8
+                  .banner-title
+                    h1.text-uppercase My Thoughts !
+                    h3.text-uppercase We Love to Post blog
+      - elsif breadcrumbs.links.any?
+        section.page-title
+          .container
+            = raw(breadcrumbs style: :bootstrap)
+
+      section.body-content
+        = yield
+      /! body content end
+      /! footer start 1
+      footer#footer.gray.text-center.short-pad.footer-5
+        .container-
+          = link_to root_path, class: 'footer-logo' do
+            img.retina alt="" src="/assets/logo.png" style=('height: 100px; width: auto;')
+          .social-link.circle.m-top-50.m-bot-50
+            a href="#"
+              i.fa.fa-facebook
+            a href="#"
+              i.fa.fa-twitter
+            a href="#"
+              i.fa.fa-dribbble
+            a href="#"
+              i.fa.fa-google-plus
+            a href="#"
+              i.fa.fa-behance
+          .copyright-sub-title.text-uppercase.border-top
+            | © Copyright 2017 "MASSIVE". All right reserved
 
     = javascript_include_tag 'application'
-    /nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
-    /  .container
-    /    .navbar-header
-    /      button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
-    /        span.sr-only Toggle navigation
-    /        span.icon-bar
-    /        span.icon-bar
-    /        span.icon-bar
-    /      = link_to 'News Portal', root_path, class: 'navbar-brand'
-    /    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-    /      ul.nav.navbar-nav
-    /        li
-    /          a href="#"  About
-    /        li
-    /          a href="#"  Services
-    /        li
-    /          a href="#"  Contact
+
+
     /.container
     /  .row
     /    .col-md-8
