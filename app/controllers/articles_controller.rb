@@ -6,25 +6,29 @@ class ArticlesController < ApplicationController
     if params[:q].present?
       @articles = @search.result
     end
-    @articles = @articles.where(category: Category.find(params[:category_id])) if params[:category_id].present?
-    @articles = @articles.page(params[:page]).per(1)
+
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      @articles = @articles.where(category: @category.id)
+    end
+    @articles = @articles.page(params[:page]).per(9)
   end
 
   def most_viewed
-    @articles = Article.order('impressions_count DESC').page(params[:page]).per(1)
+    @articles = Article.order('impressions_count DESC').page(params[:page]).per(9)
     render :index
   end
 
   def show
     @article = Article.find(params[:id])
+    @latest_articles = Article.order(updated_at: :desc).first(5)
     impressionist(@article, '', unique: [:ip_address])
-
-    puts @article.impressionist_count(filter: :ip_address)
   end
 
   private
 
   def set_search
+    @categories = Category.all
     @search = Article.ransack(params[:q])
   end
 end

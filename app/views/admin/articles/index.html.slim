@@ -28,7 +28,7 @@ table#articles.display.table[cellspacing="0" width="100%"]
         td
           = show_time(article.updated_at)
         td.action-buttons
-          = link_to t(:show), [:admin, article], class: 'btn btn-success'
+          = link_to t(:show), article, class: 'btn btn-success'
           = link_to t(:edit), edit_admin_article_path(article), class: 'btn btn-primary'
           = link_to t(:destroy), admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 

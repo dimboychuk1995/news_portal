@@ -1,5 +1,5 @@
 # Change these
-server '185.67.2.196', roles: [:web, :app, :db], primary: true
+server '185.69.153.36', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@bitbucket.org:misha_yurkiv/news_portal.git'
 set :application,     'news_portal'

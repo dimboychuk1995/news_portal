@@ -1,11 +1,56 @@
-#article
-  h1 =@article.title
-  p.lead
-    = 'category '
-    = link_to @article.category.name, category_articles_path(@article.category)
-  hr
-  p
-    span.glyphicon.glyphicon-time
-    = " Posted on #{show_time(@article.updated_at)}"
-  hr
-  =raw @article.content
+- breadcrumb :category, @article.category
+.page-content
+  .container
+    .row
+      .col-md-8
+        /! classic image post
+        .blog-classic
+          .blog-post
+            .full-width
+              = image_tag @article.main_image.url
+            h4.text-uppercase
+              = @article.title
+            ul.post-meta
+              li
+                i.fa.fa-folder-open
+                = link_to @article.category.name, category_articles_path(@article.category)
+              li
+                i.fa.fa-clock-o
+                = show_time(@article.updated_at)
+            p
+              = raw @article.content
+
+        .pagination-row
+          .pagination-post
+            .prev-post
+              - if @article.previous
+                = link_to article_path(@article.previous) do
+                  .arrow
+                    i.fa.fa-angle-double-left
+                  .pagination-txt
+                    span Previous Post
+              - else
+                a href="#"
+                  .arrow
+                    i.fa.fa-angle-double-left
+                  .pagination-txt
+                    span Previous Post
+            .post-list-link
+              = link_to root_path do
+                i.fa.fa-home
+            .next-post
+              - if @article.next
+                = link_to article_path(@article.next) do
+                  .arrow
+                    i.fa.fa-angle-double-right
+                  .pagination-txt
+                    span Next Post
+              - else
+                a href="#"
+                  .arrow
+                    i.fa.fa-angle-double-right
+                  .pagination-txt
+                    span Next Post
+
+      .col-md-4
+        = render partial: 'article_sidebar'

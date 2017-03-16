@@ -1,18 +1,51 @@
-- @articles.each do |article|
-  #article
-    h2
-      = link_to article.title, article
-    p.lead
-      = 'category '
-      = link_to article.category.name, category_articles_path(article.category)
-    p
-      span.glyphicon.glyphicon-time
-      = " Posted on #{show_time(article.updated_at)}"
-    hr
-    =raw article.content.split('<hr>')[0]
-    = link_to article, class: 'btn btn-primary' do
-      | Read More
-      span.glyphicon.glyphicon-chevron-right
-    hr
+- breadcrumb :category, @category
+/- breadcrumb :search
+.container
+  .row
+    .portfolio.portfolio-with-title.portfolio-masonry.blog-m.col-3.gutter
+      - @articles.each do |article|
+        .portfolio-item
+          - if article.main_image.present?
+            .thumb
+              = image_tag article.main_image.url(:medium)
+              .portfolio-hover
+                .action-btn
+                  = link_to article do
+                    i.icon-basic_link
+          .portfolio-title
+            h4
+              = link_to article.title, article
+            .date
+              = show_time(article.updated_at)
+            p = ActionView::Base.full_sanitizer.sanitize(article.content).truncate(150)
+            .m-top-20.m-bot-20
+              = link_to 'Read More', article, class: 'btn btn-extra-small btn-dark-border btn-transparent'
 
-= paginate @articles
+    .col-md-12
+      /! pagination
+      .text-center
+        = paginate @articles
+
+    /! feature border box start
+    - if @articles.empty?
+      .feature-box-grid
+        .heading-title.text-center
+          h3.text-uppercase Content not found
+
+/  #article
+/    h2
+/      = link_to article.title, article
+/    p.lead
+/      = 'category '
+/      = link_to article.category.name, category_articles_path(article.category)
+/    p
+/      span.glyphicon.glyphicon-time
+/      = " Posted on #{show_time(article.updated_at)}"
+/    hr
+/    =raw article.content.split('<hr>')[0]
+/    = link_to article, class: 'btn btn-primary' do
+/      | Read More
+/      span.glyphicon.glyphicon-chevron-right
+/    hr
+/
+/= paginate @articles

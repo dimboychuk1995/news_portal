@@ -1,0 +1,20 @@
+.widget
+  .heading-title-alt.text-left.heading-border-bottom
+    h6.text-uppercase latest articles
+  ul.widget-latest-post
+    - @latest_articles.each do |article|
+      li
+        .thumb
+          - if article.main_image.present?
+            = image_tag article.main_image.url(:thumb)
+        .w-desk
+          = link_to article.title, article
+          = show_time(article.updated_at)
+
+.widget
+  .heading-title-alt.text-left.heading-border-bottom
+    h6.text-uppercase category
+  ul.widget-category
+    - @categories.all.each do |category|
+      li
+        = link_to category.name, category_articles_path(category)

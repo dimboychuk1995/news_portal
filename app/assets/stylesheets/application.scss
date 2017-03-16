@@ -1,15 +1,40 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "massive/bootstrap/css/bootstrap.min.css";
+@import "massive/animate/animate.css";
+@import "massive/elasic-slider/elastic.css";
+@import "massive/iconmoon/linea-icon.css";
+@import "massive/magnific-popup/magnific-popup.css";
+@import "massive/font-awesome/css/font-awesome.min.css";
+@import "shortcodes/shortcodes.scss";
+@import "style.scss";
+@import "themes/default-theme.scss";
 
-body {
-  padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
+//<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+//<link rel="stylesheet" href="assets/vendor/animate/animate.css">
+//<link rel="stylesheet" href="assets/vendor/elasic-slider/elastic.css">
+//<link rel="stylesheet" href="assets/vendor/iconmoon/linea-icon.css">
+//<link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css">
+//<link rel="stylesheet" href="assets/vendor/owl-carousel/owl.carousel.css">
+//<link rel="stylesheet" href="assets/vendor/owl-carousel/owl.theme.css">
+//<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+//<link rel="stylesheet" href="assets/css/shortcodes.css">
+//<link rel="stylesheet" href="assets/css/style.css">
+//<link rel="stylesheet" href="assets/css/default-theme.css">
 
-footer {
-  margin: 50px 0;
-}
 
-#article img {
+
+
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
+//
+//body {
+//  padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+//}
+//
+//footer {
+//  margin: 50px 0;
+//}
+//
+.blog-post img {
   width: 100% !important;
   height: auto !important;
 }
