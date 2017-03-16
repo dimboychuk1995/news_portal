@@ -16,6 +16,8 @@ crumb :category do |category|
     link category.name, category_articles_path(category)
   elsif current_page?(most_viewed_path)
     link 'Most Viewed', most_viewed_path
+  elsif params[:q].present?
+    link 'Search', '#'
   end
 end
 

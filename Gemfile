@@ -45,8 +45,8 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'friendly_id'
-# Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
-gem 'faker', '~> 1.6', '>= 1.6.3'
+
+gem 'ffaker'
 
 gem 'i18n-tasks', '~> 0.9.12'
 gem 'summernote-rails'

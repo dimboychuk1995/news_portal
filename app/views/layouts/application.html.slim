@@ -22,19 +22,19 @@ html
               /! mega menu start
               ul.menuzord-menu.menuzord-right.c-nav_s-bg
                 li.active
-                  = link_to 'Home', root_path
+                  = link_to t(:home), root_path
                 li
-                  a href="#"  Categories
+                  a href="#" =t(:categories)
                   ul.dropdown
-                    - Category.all.each do |category|
+                    - @categories.all.each do |category|
                       li
                         = link_to category.name, category_articles_path(category)
                 li
-                  = link_to 'Most viewed', most_viewed_path
+                  = link_to t(:most_viewed), most_viewed_path
                 li
                   a href="javascript:void(0)"
                     i.fa.fa-search
-                    | Search
+                    = t(:search)
                   .megamenu.megamenu-quarter-width.navbar-search
                     = search_form_for @search do |f|
                       = f.search_field :title_or_content_cont, class: 'form-control'

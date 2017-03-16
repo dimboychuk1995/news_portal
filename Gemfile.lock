@@ -94,8 +94,7 @@ GEM
       thread_safe
     erubis (2.7.0)
     execjs (2.7.0)
-    faker (1.7.3)
-      i18n (~> 0.5)
+    ffaker (2.5.0)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
@@ -296,7 +295,7 @@ DEPENDENCIES
   capistrano3-puma
   coffee-rails (~> 4.2)
   devise (~> 4.2)
-  faker (~> 1.6, >= 1.6.3)
+  ffaker
   friendly_id
   gretel
   html2slim (~> 0.2.0)

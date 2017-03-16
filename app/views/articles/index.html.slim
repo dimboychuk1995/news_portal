@@ -1,22 +1,23 @@
 - breadcrumb :category, @category
-- breadcrumb :search
+/- breadcrumb :search
 .container
   .row
     .portfolio.portfolio-with-title.portfolio-masonry.blog-m.col-3.gutter
       - @articles.each do |article|
         .portfolio-item
-          .thumb
-            img alt="" src="assets/post/p1.jpg" /
-            .portfolio-hover
-              .action-btn
-                = link_to article do
-                  i.icon-basic_link
+          - if article.main_image.present?
+            .thumb
+              = image_tag article.main_image.url(:medium)
+              .portfolio-hover
+                .action-btn
+                  = link_to article do
+                    i.icon-basic_link
           .portfolio-title
             h4
               = link_to article.title, article
             .date
               = show_time(article.updated_at)
-            p Saborum volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur fermentum nibh volutpat, accumsan purus.
+            p = ActionView::Base.full_sanitizer.sanitize(article.content).truncate(150)
             .m-top-20.m-bot-20
               = link_to 'Read More', article, class: 'btn btn-extra-small btn-dark-border btn-transparent'
 

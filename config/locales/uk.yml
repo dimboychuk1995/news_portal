@@ -35,4 +35,7 @@ uk:
   title: Заголовок
   toggle_navigation: Навігація
   updated_at: Оновлено
-  views: "Перегляди"
+  views: Перегляди
+  main_image: Головне зображення
+  most_viewed: Найпопулярніші
+  search: "Пошук"

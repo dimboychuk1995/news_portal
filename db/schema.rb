@@ -10,16 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309214533) do
+ActiveRecord::Schema.define(version: 20170315205344) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
-    t.text     "content",           limit: 65535
+    t.text     "content",                 limit: 65535
     t.integer  "category_id"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "slug"
-    t.integer  "impressions_count",               default: 0
+    t.integer  "impressions_count",                     default: 0
+    t.string   "main_image_file_name"
+    t.string   "main_image_content_type"
+    t.integer  "main_image_file_size"
+    t.datetime "main_image_updated_at"
     t.index ["category_id"], name: "index_articles_on_category_id", using: :btree
     t.index ["slug"], name: "index_articles_on_slug", using: :btree
   end

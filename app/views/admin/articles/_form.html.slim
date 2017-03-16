@@ -13,6 +13,14 @@
     br
     = f.text_field :title, class: 'form-control', placeholder: t(:enter_article_title), required: true
   .form-group
+    = f.label :main_image, t(:main_image)
+    br
+    = f.file_field :main_image
+  - if @article.main_image.present?
+    .row
+      .col-sm-4
+        = image_tag @article.main_image.url(:medium), class: 'img-responsive'
+  .form-group
     = f.label :content, t(:content)
     br
     = f.text_area :content, class: 'form-control', placeholder: t(:enter_content), required: true
