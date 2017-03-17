@@ -35,6 +35,8 @@ set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 
+ssh_options[:forward_agent] = true
+
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
   task :make_dirs do
