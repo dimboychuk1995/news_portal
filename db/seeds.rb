@@ -4,4 +4,4 @@
                           content: (FFaker::LoremUA.paragraphs+FFaker::LoremUA.paragraphs).join('<br>'),
                           main_image: 'https://source.unsplash.com/random',
                           category: Category.all.sample,
-                          updated_at: FFaker::Time.between(DateTime.now - 30, DateTime.now)) }
+                          updated_at: FFaker::Time.between(Time.now - 30.days, Time.now)) }
