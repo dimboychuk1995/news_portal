@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
       @category = Category.find(params[:category_id])
       @articles = @articles.where(category: @category.id)
     end
-    @articles = @articles.page(params[:page]).per(9)
+    @articles = @articles.order(created_at: :desc).page(params[:page]).per(9)
   end
 
   def most_viewed
