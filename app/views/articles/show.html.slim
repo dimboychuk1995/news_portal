@@ -6,8 +6,9 @@
         /! classic image post
         .blog-classic
           .blog-post
-            .full-width
-              = image_tag @article.main_image.url
+            - if @article.main_image.present?
+              .full-width
+                = image_tag @article.main_image.url
             h4.text-uppercase
               = @article.title
             ul.post-meta

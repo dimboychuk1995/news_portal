@@ -10,7 +10,7 @@ class Admin::ArticlesController < Admin::BaseController
   end
 
   def new
-    @article = Article.create(title: "#{t(:new_article_form)} #{Date.current}", content: '')
+    @article = Article.create(title: "#{t(:new_article_form)} #{Date.current}", content: '', category: Category.first)
     redirect_to edit_admin_article_url(@article)
   end
 
