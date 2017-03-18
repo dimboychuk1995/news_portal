@@ -57,6 +57,7 @@ gem 'impressionist'
 gem 'therubyracer'
 gem 'gretel'
 gem 'font-awesome-rails'
+gem 'babosa'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

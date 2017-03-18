@@ -44,6 +44,7 @@ GEM
     ast (2.3.0)
     autoprefixer-rails (6.7.6)
       execjs
+    babosa (1.0.2)
     bcrypt (3.1.11)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -285,6 +286,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  babosa
   bootstrap-sass (~> 3.3.6)
   bootstrap_sb_admin_base_v2
   byebug
