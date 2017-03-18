@@ -17,7 +17,7 @@ html
             nav.menuzord.js-primary-navigation aria-label=('Primary Navigation') role="navigation"
               /! logo start
               = link_to root_path, class: 'logo-brand' do
-                = image_tag 'logo.png', class: 'retina'
+                = image_tag asset_path('logo.png')
                 /img.retina alt="Massive" src="/assets/logo.png"
               /! logo end
               /! mega menu start
@@ -65,7 +65,8 @@ html
       footer#footer.gray.text-center.short-pad.footer-5
         .container-
           = link_to root_path, class: 'footer-logo' do
-            img.retina alt="" src="/assets/logo.png" style=('height: 100px; width: auto;')
+            = image_tag asset_path('logo.png'), style:('height: 100px; width: auto;')
+            /img.retina alt="" src="/assets/logo.png" style=('height: 100px; width: auto;')
           .social-link.circle.m-top-50.m-bot-50
             a href="#"
               i.fa.fa-facebook
