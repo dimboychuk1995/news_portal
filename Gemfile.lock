@@ -296,6 +296,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   ffaker
+  font-awesome-rails
   friendly_id
   gretel
   html2slim (~> 0.2.0)

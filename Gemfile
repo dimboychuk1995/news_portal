@@ -56,6 +56,8 @@ gem 'ransack'
 gem 'impressionist'
 gem 'therubyracer'
 gem 'gretel'
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
