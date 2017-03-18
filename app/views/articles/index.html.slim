@@ -19,7 +19,7 @@
               = show_time(article.updated_at)
             p = ActionView::Base.full_sanitizer.sanitize(article.content).truncate(150)
             .m-top-20.m-bot-20
-              = link_to 'Read More', article, class: 'btn btn-extra-small btn-dark-border btn-transparent'
+              = link_to t(:read_more), article, class: 'btn btn-extra-small btn-dark-border btn-transparent'
 
     .col-md-12
       /! pagination
@@ -30,22 +30,4 @@
     - if @articles.empty?
       .feature-box-grid
         .heading-title.text-center
-          h3.text-uppercase Content not found
-
-/  #article
-/    h2
-/      = link_to article.title, article
-/    p.lead
-/      = 'category '
-/      = link_to article.category.name, category_articles_path(article.category)
-/    p
-/      span.glyphicon.glyphicon-time
-/      = " Posted on #{show_time(article.updated_at)}"
-/    hr
-/    =raw article.content.split('<hr>')[0]
-/    = link_to article, class: 'btn btn-primary' do
-/      | Read More
-/      span.glyphicon.glyphicon-chevron-right
-/    hr
-/
-/= paginate @articles
+          h3.text-uppercase =t(:content_not_found)

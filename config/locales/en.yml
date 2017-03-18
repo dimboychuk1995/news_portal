@@ -40,4 +40,9 @@ en:
   main_image: "Main image"
   most_viewed: Mosr viewed
   search: "Search"
+  content_not_found: "Content not found"
+  read_more: "Read more"
+  previous_post: "Previous Post"
+  next_post: "Next Post"
+  latest_articles: "Latest articles"
 

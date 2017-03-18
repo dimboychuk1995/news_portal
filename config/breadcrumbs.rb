@@ -1,9 +1,9 @@
 crumb :root do
-  link 'Home', root_path
+  link t(:home), root_path
 end
 
 crumb :search do
-  link 'Search', '#' if params[:q].present?
+  link t(:search), '#' if params[:q].present?
 end
 
 # crumb :article do |article|
@@ -15,9 +15,9 @@ crumb :category do |category|
   if category
     link category.name, category_articles_path(category)
   elsif current_page?(most_viewed_path)
-    link 'Most Viewed', most_viewed_path
+    link t(:most_viewed), most_viewed_path
   elsif params[:q].present?
-    link 'Search', '#'
+    link t(:search), '#'
   end
 end
 

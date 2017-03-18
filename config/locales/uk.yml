@@ -39,3 +39,26 @@ uk:
   main_image: Головне зображення
   most_viewed: Найпопулярніші
   search: "Пошук"
+  content_not_found: "Контент не знайдено"
+  read_more: "Читати далі"
+  previous_post: "Попередня стаття"
+  next_post: "Наступна стаття"
+  latest_articles: "Останні статті"
+
+  page_entries_info:
+    more_pages:
+      display_entries: "Відображено %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> із <b>%{total}</b>"
+    one_page:
+      display_entries:
+        few: "Відображені <b>%{count}</b> %{entry_name}"
+        many: "Відображені <b>%{count}</b> %{entry_name}"
+        one: "Відображено <b>%{count}</b> %{entry_name}"
+        other: "Відображені <b>всі %{count}</b> %{entry_name}"
+        zero: "Жодного %{entry_name}"
+  views:
+    pagination:
+      first: "Перша"
+      last: "Остання"
+      next: "Наступна"
+      previous: "Попередня"
+      truncate: "&hellip;"

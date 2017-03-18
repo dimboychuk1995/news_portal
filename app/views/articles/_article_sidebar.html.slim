@@ -1,6 +1,6 @@
 .widget
   .heading-title-alt.text-left.heading-border-bottom
-    h6.text-uppercase latest articles
+    h6.text-uppercase =t(:latest_articles)
   ul.widget-latest-post
     - @latest_articles.each do |article|
       li
@@ -13,7 +13,7 @@
 
 .widget
   .heading-title-alt.text-left.heading-border-bottom
-    h6.text-uppercase category
+    h6.text-uppercase =t(:categories)
   ul.widget-category
     - @categories.all.each do |category|
       li

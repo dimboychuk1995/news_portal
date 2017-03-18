@@ -58,7 +58,7 @@ gem 'therubyracer'
 gem 'gretel'
 gem 'font-awesome-rails'
 gem 'babosa'
-
+gem 'kaminari-i18n', '~> 0.3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
