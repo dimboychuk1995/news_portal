@@ -3,7 +3,7 @@ server '185.69.153.36', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@bitbucket.org:misha_yurkiv/news_portal.git'
 set :application,     'news_portal'
-set :user,            'deploy'
+set :user,            'deployer'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -34,8 +34,6 @@ set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 ## Linked Files & Directories (Default None):
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
-
-ssh_options[:forward_agent] = true
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
