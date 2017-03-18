@@ -46,16 +46,16 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'friendly_id'
 
-gem 'ffaker'
-
-gem 'i18n-tasks', '~> 0.9.12'
-gem 'summernote-rails'
-gem 'js-routes'
-
-gem 'ransack'
-gem 'impressionist'
-gem 'therubyracer'
-gem 'gretel'
+# gem 'ffaker'
+#
+# gem 'i18n-tasks', '~> 0.9.12'
+# gem 'summernote-rails'
+# gem 'js-routes'
+#
+# gem 'ransack'
+# gem 'impressionist'
+# gem 'therubyracer'
+# gem 'gretel'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
