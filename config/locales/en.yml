@@ -36,7 +36,7 @@ en:
   title: Title
   toggle_navigation: Toggle navigation
   updated_at: Updated at
-  views: "Views"
+  views_count: "Views"
   main_image: "Main image"
   most_viewed: Mosr viewed
   search: "Search"
@@ -45,4 +45,5 @@ en:
   previous_post: "Previous Post"
   next_post: "Next Post"
   latest_articles: "Latest articles"
+  are_you_sure: "Are you sure?"
 

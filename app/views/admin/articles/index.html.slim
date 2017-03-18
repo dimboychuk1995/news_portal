@@ -7,7 +7,7 @@ p#notice
 table#articles.display.table[cellspacing="0" width="100%"]
   thead
     tr
-      th
+      th[width="40%"]
         = t(:title)
       /th
       /  = t(:content)
@@ -15,7 +15,9 @@ table#articles.display.table[cellspacing="0" width="100%"]
         = t(:category)
       th
         = t(:updated_at)
-      th[width="30%"]
+      th
+        = t(:views_count)
+      th
   tbody
     - @articles.each do |article|
       tr
@@ -27,10 +29,15 @@ table#articles.display.table[cellspacing="0" width="100%"]
           = article.category.name if article.category
         td
           = show_time(article.updated_at)
+        td
+          = article.impressionist_count(:filter=>:ip_address)
         td.action-buttons
-          = link_to t(:show), article, class: 'btn btn-success'
-          = link_to t(:edit), edit_admin_article_path(article), class: 'btn btn-primary'
-          = link_to t(:destroy), admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+          = link_to article, class: 'btn btn-success', target: :_blank do
+            i.fa.fa-eye
+          = link_to edit_admin_article_path(article), class: 'btn btn-primary' do
+            i.fa.fa-pencil
+          = link_to admin_article_path(article), method: :delete, data: { confirm: t(:are_you_sure) }, class: 'btn btn-danger' do
+            i.fa.fa-trash
 
 - content_for(:extra_scripts) do
   javascript:

@@ -35,7 +35,7 @@ uk:
   title: Заголовок
   toggle_navigation: Навігація
   updated_at: Оновлено
-  views: Перегляди
+  views_count: Перегляди
   main_image: Головне зображення
   most_viewed: Найпопулярніші
   search: "Пошук"
@@ -62,3 +62,4 @@ uk:
       next: "Наступна"
       previous: "Попередня"
       truncate: "&hellip;"
+  are_you_sure: " Ви впевнені?"
