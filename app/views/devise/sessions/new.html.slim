@@ -1,0 +1,16 @@
+.authform
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f|
+    - if flash[:alert]
+      .alert.alert-danger = flash[:alert]
+    .form-group
+      = f.label :email
+      = f.email_field :email, :autofocus => true, class: 'form-control'
+    .form-group
+      = f.label :password, t('activerecord.attributes.user.password')
+      = f.password_field :password, class: 'form-control'
+    - if devise_mapping.rememberable?
+      .checkbox
+        label
+          = f.check_box :remember_me
+          = t('activerecord.attributes.user.remember_me')
+    = f.submit t('devise.sessions.new.sign_in'), :class => 'btn btn-lg btn-success btn-block'

@@ -15,4 +15,6 @@ Rails.application.routes.draw do
       post :upload_attachment, on: :member
     end
   end
+
+  devise_for :admins
 end
