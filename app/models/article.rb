@@ -12,11 +12,13 @@ class Article < ApplicationRecord
   has_attached_file :main_image, styles: {medium: '500x500>', thumb: '100x100>'}
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\z/
 
+  scope :published, -> { where(published: true) }
+
   def next
-    self.class.where("id > ?", id).first
+    self.class.published.where("id > ?", id).first
   end
 
   def previous
-    self.class.where("id < ?", id).last
+    self.class.published.where("id < ?", id).last
   end
 end

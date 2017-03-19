@@ -28,6 +28,11 @@
     = f.label :category, t(:category)
     br
     = f.select :category_id, options_for_select(@categories.collect {|c| [c.name, c.id]}, @article.category_id), { prompt: t(:select_a_category) }, { required: true, class: 'form-control' }
+  .form-group
+    .checkbox
+      = f.label :published do
+        = f.check_box :published
+        = t(:publish)
   .form-group.actions
     = f.submit t(:submit), :class => 'btn btn-lg btn-success btn-block'
 

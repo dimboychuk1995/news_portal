@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_search
 
   def index
-    @articles = Article.all
+    @articles = Article.published
     if params[:q].present?
       @articles = @search.result
     end
@@ -15,13 +15,13 @@ class ArticlesController < ApplicationController
   end
 
   def most_viewed
-    @articles = Article.order('impressions_count DESC').page(params[:page]).per(9)
+    @articles = Article.published.order('impressions_count DESC').page(params[:page]).per(9)
     render :index
   end
 
   def show
     @article = Article.find(params[:id])
-    @latest_articles = Article.order(updated_at: :desc).first(5)
+    @latest_articles = Article.published.order(updated_at: :desc).first(5)
     impressionist(@article, '', unique: [:ip_address])
   end
 
@@ -29,6 +29,6 @@ class ArticlesController < ApplicationController
 
   def set_search
     @categories = Category.all
-    @search = Article.ransack(params[:q])
+    @search = Article.published.ransack(params[:q])
   end
 end
