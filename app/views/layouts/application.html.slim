@@ -51,8 +51,7 @@ html
               .row
                 .col-md-8
                   .banner-title
-                    h1.text-uppercase My Thoughts !
-                    h3.text-uppercase We Love to Post blog
+                    h1.text-uppercase Рідне місто
       - elsif breadcrumbs.links.any?
         section.page-title
           .container
@@ -65,7 +64,7 @@ html
       footer#footer.gray.text-center.short-pad.footer-5
         .container-
           = link_to root_path, class: 'footer-logo' do
-            = image_tag asset_path('logo.png'), style:('height: 100px; width: auto;')
+            = image_tag asset_path('logo.png'), style:('height: 80px; width: auto;')
             /img.retina alt="" src="/assets/logo.png" style=('height: 100px; width: auto;')
           .social-link.circle.m-top-50.m-bot-50
             a href="#"
@@ -82,35 +81,3 @@ html
             | © Copyright 2017 "MASSIVE". All right reserved
 
     = javascript_include_tag 'application'
-
-
-    /.container
-    /  .row
-    /    .col-md-8
-    /      = yield
-    /    .col-md-4
-    /      .well
-    /        h4 Search
-    /        = search_form_for @search do |f|
-    /          .input-group
-    /            = f.search_field :title_or_content_cont, class: 'form-control'
-    /            span.input-group-btn
-    /              = f.submit class: 'btn btn-default'
-    /      .well
-    /        h4 Categories
-    /        .row
-    /          .col-lg-12
-    /            ul.list-unstyled
-    /              li
-    /                = link_to 'Most viewed', most_viewed_path
-    /              - Category.all.each do |category|
-    /                li
-    /                  = link_to category.name, category_articles_path(category)
-    /      .well
-    /        h4 Side Widget Well
-    /        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.
-    /  hr
-    /  footer
-    /    .row
-    /      .col-lg-12
-    /        p Copyright © Your Website 2017
