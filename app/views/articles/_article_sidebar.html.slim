@@ -10,6 +10,18 @@
         .w-desk
           = link_to article.title, article
           = show_time(article.updated_at)
+.widget
+  .heading-title-alt.text-left.heading-border-bottom
+    h6.text-uppercase =t(:most_viewed)
+  ul.widget-latest-post
+    - @most_viewed.each do |article|
+      li
+        .thumb
+          - if article.main_image.present?
+            = image_tag article.main_image.url(:thumb)
+        .w-desk
+          = link_to article.title, article
+          = show_time(article.updated_at)
 
 .widget
   .heading-title-alt.text-left.heading-border-bottom

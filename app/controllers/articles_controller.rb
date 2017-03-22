@@ -21,7 +21,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @latest_articles = Article.published.order(updated_at: :desc).first(5)
+    @latest_articles = Article.published.order(created_at: :desc).first(5)
+    @most_viewed = Article.published.order('impressions_count DESC').first(5)
     impressionist(@article, '', unique: [:ip_address])
   end
 
