@@ -19,5 +19,6 @@ module NewsPortal
     end
     config.time_zone = 'Europe/Kiev'
     config.i18n.default_locale = :uk
+    config.exceptions_app = self.routes
   end
 end

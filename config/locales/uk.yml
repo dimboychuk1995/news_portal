@@ -64,3 +64,5 @@ uk:
       truncate: "&hellip;"
   are_you_sure: " Ви впевнені?"
   publish: "Опублікувати"
+  not_found: "Сторінку не знайдено"
+  something_went_wrong: "Щось пішло не так"

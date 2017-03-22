@@ -1,0 +1,8 @@
+.container
+  .row.page-content
+    .col-md-2.col-md-offset-5
+      .error404
+        | 404
+      .error-txt
+        = t(:not_found)
+      = link_to t(:home), root_path, class: 'btn btn-medium btn-theme-color'
