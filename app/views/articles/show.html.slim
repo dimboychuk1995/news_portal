@@ -1,3 +1,12 @@
+- set_meta_tags og: { title: @article.title,
+                      type: 'article',
+                      url: request.original_url,
+                      image: @article.main_image.url,
+                      description: ActionView::Base.full_sanitizer.sanitize(@article.content).truncate(150),
+                    },
+                  description: ActionView::Base.full_sanitizer.sanitize(@article.content).truncate(150),
+                  image_src: @article.main_image.url
+
 - breadcrumb :category, @article.category
 .page-content
   .container
@@ -9,8 +18,8 @@
             - if @article.main_image.present?
               .full-width
                 = image_tag @article.main_image.url
-            h4.text-uppercase
-              = @article.title
+            h1.text-uppercase
+              = title @article.title
             ul.post-meta
               li
                 i.fa.fa-folder-open

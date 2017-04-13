@@ -45,6 +45,7 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'friendly_id'
+gem 'meta-tags'
 
 gem 'ffaker'
 

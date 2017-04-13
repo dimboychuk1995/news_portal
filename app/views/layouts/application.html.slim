@@ -1,8 +1,7 @@
 doctype html
 html
   head
-    title
-      | Рідне місто
+    = display_meta_tags site: 'Рідне місто'
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
   body
